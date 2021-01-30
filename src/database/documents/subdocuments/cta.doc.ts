@@ -1,7 +1,7 @@
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
-export class CtaModel {
+export class CtaDoc {
   @PrimaryGeneratedColumn()
   id: string;
 

@@ -1,23 +1,25 @@
-import { type } from 'os';
 import {
   Entity,
   ObjectIdColumn,
-  ObjectID,
   Column,
   CreateDateColumn,
+  ObjectID,
 } from 'typeorm';
-import { CtaModel } from './subdocuments/cta.model';
+import { CtaDoc } from './subdocuments/cta.doc';
 
 @Entity()
-export class BannerModel {
+export class NewsDoc {
   @ObjectIdColumn()
   id: ObjectID;
 
   @Column()
+  tittle: string;
+
+  @Column()
   image: string;
 
-  @Column((type) => CtaModel)
-  cta: CtaModel[];
+  @Column((type) => CtaDoc)
+  cta: CtaDoc[];
 
   @CreateDateColumn()
   createdAt: Date;

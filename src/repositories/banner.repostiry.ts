@@ -1,25 +1,13 @@
 import { EntityRepository, Repository } from 'typeorm';
-import { BannerModel } from '../database/documents/banner.model';
-import {
-  SuccessResponse,
-  NotFoundException,
-} from '../app/exceptions/httpException';
-@EntityRepository(BannerModel)
-export class BannerRepository extends Repository<BannerModel> {
-  public async getAll() {
-    const getBanner = await this.find();
-    if (getBanner.length < 1) throw new NotFoundException('Data not found');
+import { BannerDoc } from '../database/documents/banner.doc';
+// import { NotFoundException } from '../app/exceptions/httpException';
+@EntityRepository(BannerDoc)
+export class BannerRepository extends Repository<BannerDoc> {
+  public async getAllBanners() {
+    const getBanners = await this.find();
+    if (getBanners.length < 1) console.log('Banners data not found');
+    // throw new NotFoundException('Data not found');
 
-    const obj = {
-      status: 'OK',
-      message: 'Data succesfully loaded',
-      result: {
-        banners: getBanner,
-        maincards: [],
-        minicarousel: [],
-        news: [],
-      },
-    };
-    throw new SuccessResponse(obj);
+    return getBanners;
   }
 }

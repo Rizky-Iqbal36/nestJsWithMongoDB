@@ -1,25 +1,25 @@
 import {
   Entity,
+  ObjectIdColumn,
+  ObjectID,
   Column,
   CreateDateColumn,
-  ObjectID,
-  ObjectIdColumn,
 } from 'typeorm';
-import { CtaModel } from './cta.model';
+import { CtaDoc } from './subdocuments/cta.doc';
 
 @Entity()
-export class CardModel {
+export class MainCardDoc {
   @ObjectIdColumn()
   id: ObjectID;
 
   @Column()
-  title: string;
+  tittle: string;
 
   @Column()
   image: string;
 
-  @Column((type) => CtaModel)
-  cta: CtaModel[];
+  @Column((type) => CtaDoc)
+  cta: CtaDoc[];
 
   @CreateDateColumn()
   createdAt: Date;
