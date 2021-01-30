@@ -1,3 +1,4 @@
+import { type } from 'os';
 import {
   Entity,
   ObjectIdColumn,
@@ -5,15 +6,12 @@ import {
   Column,
   CreateDateColumn,
 } from 'typeorm';
-import { CtaModel } from './cta.model';
+import { CtaModel } from './subdocuments/cta.model';
 
 @Entity()
-export class MainCardModel {
+export class BannerModel {
   @ObjectIdColumn()
   id: ObjectID;
-
-  @Column()
-  tittle: string;
 
   @Column()
   image: string;

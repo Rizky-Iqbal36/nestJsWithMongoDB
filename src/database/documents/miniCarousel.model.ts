@@ -1,5 +1,5 @@
 import { Entity, Column } from 'typeorm';
-import { CardModel } from './card.model';
+import { CardModel } from './subdocuments/card.model';
 
 @Entity()
 export class MiniCarouselModel {

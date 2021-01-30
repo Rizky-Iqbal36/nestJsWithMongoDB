@@ -1,5 +1,5 @@
 import { EntityRepository, Repository } from 'typeorm';
-import { BannerModel } from '../database/models/banner.model';
+import { BannerModel } from '../database/documents/banner.model';
 import {
   SuccessResponse,
   NotFoundException,
