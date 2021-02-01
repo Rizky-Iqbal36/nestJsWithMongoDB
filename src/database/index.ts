@@ -6,6 +6,10 @@ import {
   MainCardDoc,
   MiniCarouselDoc,
   NewsDoc,
+  CardDoc,
+  CtaDoc,
+  CtaButtonDetailDoc,
+  MarketingContentDoc,
 } from './documents/index';
 export default TypeOrmModule.forRoot({
   type: 'mongodb',
@@ -14,5 +18,14 @@ export default TypeOrmModule.forRoot({
   synchronize: app.database.synchronize,
   logging: app.database.logging,
   useUnifiedTopology: app.database.useUnifiedTopology,
-  entities: [BannerDoc, MainCardDoc, MiniCarouselDoc, NewsDoc],
+  entities: [
+    BannerDoc,
+    MainCardDoc,
+    MiniCarouselDoc,
+    NewsDoc,
+    CardDoc,
+    CtaDoc,
+    CtaButtonDetailDoc,
+    MarketingContentDoc,
+  ],
 });

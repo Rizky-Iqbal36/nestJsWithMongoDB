@@ -1,8 +1,8 @@
 import { TypeOrmModule } from '@nestjs/typeorm';
 
 //Controller Layer
-import { BannerController } from './controllers/marketing.controller';
-export const controllers = [BannerController];
+import { MarketingController } from './controllers/marketing.controller';
+export const controllers = [MarketingController];
 
 //Service layer
 import { MarketingService } from './services/marketing.service';
@@ -14,10 +14,12 @@ import {
   MainCardRepository,
   MiniCarouselRepository,
   NewsRepository,
+  MarketingContentRepository,
 } from './repositories/index';
 export const repositories = TypeOrmModule.forFeature([
   BannerRepository,
   MainCardRepository,
   MiniCarouselRepository,
   NewsRepository,
+  MarketingContentRepository,
 ]);

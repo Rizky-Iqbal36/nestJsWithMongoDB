@@ -19,8 +19,12 @@ export class CardDoc {
   image: string;
 
   @Column((type) => CtaDoc)
-  cta: CtaDoc[];
+  cta: CtaDoc;
 
   @CreateDateColumn()
   createdAt: Date;
+
+  constructor(title: string, image: string, cta: CtaDoc) {
+    (this.title = title), (this.image = image), (this.cta = cta);
+  }
 }

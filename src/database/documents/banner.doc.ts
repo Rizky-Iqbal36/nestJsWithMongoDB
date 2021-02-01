@@ -16,7 +16,7 @@ export class BannerDoc {
   image: string;
 
   @Column((type) => CtaDoc)
-  cta: CtaDoc[];
+  cta: CtaDoc;
 
   @CreateDateColumn()
   createdAt: Date;

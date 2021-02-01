@@ -4,6 +4,7 @@ import {
   MainCardRepository,
   MiniCarouselRepository,
   NewsRepository,
+  MarketingContentRepository,
 } from '../repositories/index';
 @Injectable()
 export class MarketingService {
@@ -12,6 +13,7 @@ export class MarketingService {
     private readonly mainCardRepository: MainCardRepository,
     private readonly miniCarouselRepository: MiniCarouselRepository,
     private readonly newsRepository: NewsRepository,
+    private readonly marketingContentRepository: MarketingContentRepository,
   ) {}
   public async getAllData() {
     const getBanners = await this.bannerRepository.getAllBanners();
@@ -25,5 +27,9 @@ export class MarketingService {
       news: getNews,
     };
     return result;
+  }
+  public async getDetailData(id: string) {
+    const getData = await this.marketingContentRepository.getDetail(id);
+    return getData;
   }
 }

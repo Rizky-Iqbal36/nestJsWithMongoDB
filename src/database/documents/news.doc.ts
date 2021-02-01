@@ -13,13 +13,13 @@ export class NewsDoc {
   id: ObjectID;
 
   @Column()
-  tittle: string;
+  title: string;
 
   @Column()
   image: string;
 
   @Column((type) => CtaDoc)
-  cta: CtaDoc[];
+  cta: CtaDoc;
 
   @CreateDateColumn()
   createdAt: Date;
