@@ -14,11 +14,11 @@ export async function seedMarketingContent() {
   marketingContent.ctaButtonDetail = new CtaButtonDetailDoc();
   marketingContent.ctaButtonDetail.ctaButtonName = 'AC And Bermasalah ?';
   marketingContent.ctaButtonDetail.ctaButtonDescription = 'Mulai Dari';
+  marketingContent.ctaButtonDetail.ctaButtonPriceDescription = 'Rp 350.000';
   marketingContent.ctaButtonDetail.ctaButtonFirebaseEventName =
     'COVID_NEWS_INFORMATION';
   marketingContent.ctaButtonDetail.ctaButtonType = 'WEBVIEW';
   marketingContent.ctaButtonDetail.ctaButtonLink = 'https://halojasa.com';
   await manager.save(marketingContent);
-  // console.log(marketingContent);
   //[END seed_marketing_content]
 }

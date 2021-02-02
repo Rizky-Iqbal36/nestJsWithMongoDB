@@ -11,8 +11,10 @@ import {
   CtaButtonDetailDoc,
   MarketingContentDoc,
 } from './documents/index';
+
 export default TypeOrmModule.forRoot({
   type: 'mongodb',
+  // name: app.database.name,
   url: app.database.url,
   useNewUrlParser: app.database.useNewUrlParser,
   synchronize: app.database.synchronize,

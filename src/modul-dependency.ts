@@ -12,10 +12,11 @@ export const services = [MarketingService];
 import {
   BannerRepository,
   MainCardRepository,
+  MarketingContentRepository,
   MiniCarouselRepository,
   NewsRepository,
-  MarketingContentRepository,
 } from './repositories/index';
+
 export const repositories = TypeOrmModule.forFeature([
   BannerRepository,
   MainCardRepository,

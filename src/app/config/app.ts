@@ -32,7 +32,7 @@ const appConfig = {
    */
   database: {
     url: process.env.DATABASE_URL,
-    name: process.env.DATABASE_NAME,
+    name: process.env.APP_NAME,
     useNewUrlParser: true,
     synchronize: false, // set true to sync based on models,
     logging: true,

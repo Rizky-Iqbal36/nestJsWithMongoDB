@@ -9,7 +9,6 @@ export class MarketingController {
   @Get('/marketing/mobile/content')
   async getAllData(@Req() req: Request) {
     const traceID = req.header('X-Trace-ID');
-    console.log(traceID);
     const getResult = await this.marketingService.getAllData();
     const obj: Object = {
       status: 200,
@@ -19,8 +18,14 @@ export class MarketingController {
     throw new SuccessResponse(obj);
   }
   @Get('/marketing/mobile/content/:id')
-  async getDetailData(@Param('id') id: string) {
+  async getDetailData(@Param('id') id: string, @Req() req: Request) {
+    const traceID = req.header('X-Trace-ID');
     const getResult = await this.marketingService.getDetailData(id);
-    throw new SuccessResponse(getResult);
+    const obj: Object = {
+      status: 200,
+      traceId: traceID,
+      result: getResult,
+    };
+    throw new SuccessResponse(obj);
   }
 }
