@@ -25,9 +25,9 @@ export class SuccessResponse extends HttpException {
   }
 }
 
-export class NotFoundException extends CustomException {
-  constructor(flag: any, message: any) {
-    super(HttpStatus.NOT_FOUND, flag, message);
+export class NotFoundException extends HttpException {
+  constructor(message: any) {
+    super(message, HttpStatus.NOT_FOUND);
   }
 }
 

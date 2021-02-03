@@ -1,7 +1,10 @@
 import { Controller, Get, Param, Req } from '@nestjs/common';
 import { MarketingService } from '../services/marketing.service';
 import { Request } from 'express';
-import { SuccessResponse } from '../app/exceptions/httpException';
+import {
+  SuccessResponse,
+  NotFoundException,
+} from '../app/exceptions/httpException';
 @Controller()
 export class MarketingController {
   constructor(private readonly marketingService: MarketingService) {}
@@ -10,6 +13,7 @@ export class MarketingController {
   async getAllData(@Req() req: Request) {
     const traceID = req.header('X-Trace-ID');
     const getResult = await this.marketingService.getAllData();
+
     const obj: Object = {
       status: 200,
       traceId: traceID,
@@ -21,6 +25,9 @@ export class MarketingController {
   async getDetailData(@Param('id') id: string, @Req() req: Request) {
     const traceID = req.header('X-Trace-ID');
     const getResult = await this.marketingService.getDetailData(id);
+
+    if (getResult.length < 1) throw new NotFoundException('DATA_NOT_FOUND');
+
     const obj: Object = {
       status: 200,
       traceId: traceID,

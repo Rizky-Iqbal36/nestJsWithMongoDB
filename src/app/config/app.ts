@@ -31,10 +31,10 @@ const appConfig = {
    * Please refer to https://docs.nestjs.com/techniques/database
    */
   database: {
-    url: process.env.DATABASE_URL,
+    url: process.env.DATABASE_URL, //link to database (mongodb atlas)
     name: process.env.APP_NAME,
     useNewUrlParser: true,
-    synchronize: false, // set true to sync based on models,
+    synchronize: true, // set true to sync based on models,
     logging: true,
     useUnifiedTopology: true,
   },
