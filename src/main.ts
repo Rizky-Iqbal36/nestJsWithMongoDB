@@ -8,8 +8,8 @@ async function bootstrap() {
   const port = process.env.PORT || 3000;
   const app = await NestFactory.create(AppModule);
   app.setGlobalPrefix('api');
-  await app.listen(port, () => console.log(`Listening on port ${port}`));
   await seedListMarketingContent();
   await seedMarketingContent();
+  await app.listen(port, () => console.log(`Listening on port ${port}`));
 }
 bootstrap();

@@ -7,7 +7,7 @@ import {
 } from 'typeorm';
 import { CtaDoc } from './subdocuments/cta.doc';
 
-@Entity()
+@Entity({ name: 'MainCardDoc' })
 export class MainCardDoc {
   @ObjectIdColumn()
   id: ObjectID;

@@ -6,7 +6,7 @@ import {
   ObjectIdColumn,
 } from 'typeorm';
 import { CtaButtonDetailDoc } from './subdocuments/ctaButtonDetail.doc';
-@Entity()
+@Entity({ name: 'MarketingContentDoc' })
 export class MarketingContentDoc {
   @ObjectIdColumn()
   id: ObjectID | string;

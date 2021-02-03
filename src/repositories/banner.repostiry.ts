@@ -1,6 +1,7 @@
 import { EntityRepository, Repository } from 'typeorm';
 import { BannerDoc } from '../database/documents/banner.doc';
 // import { NotFoundException } from '../app/exceptions/httpException';
+
 @EntityRepository(BannerDoc)
 export class BannerRepository extends Repository<BannerDoc> {
   public async getAllBanners() {

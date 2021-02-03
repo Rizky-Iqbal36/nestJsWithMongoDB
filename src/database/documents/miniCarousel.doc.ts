@@ -1,7 +1,7 @@
 import { Entity, Column } from 'typeorm';
 import { CardDoc } from './subdocuments/card.doc';
 
-@Entity()
+@Entity({ name: 'MiniCarouselDoc' })
 export class MiniCarouselDoc {
   @Column()
   name: string;

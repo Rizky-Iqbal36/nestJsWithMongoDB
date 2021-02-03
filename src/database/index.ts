@@ -14,12 +14,12 @@ import {
 
 export default TypeOrmModule.forRoot({
   type: 'mongodb',
-  // name: app.database.name,
+  // name: 'onyankopon',
   url: app.database.url,
-  useNewUrlParser: app.database.useNewUrlParser,
-  synchronize: app.database.synchronize,
-  logging: app.database.logging,
-  useUnifiedTopology: app.database.useUnifiedTopology,
+  useNewUrlParser: true,
+  synchronize: true,
+  logging: true,
+  // useUnifiedTopology: app.database.useUnifiedTopology,
   entities: [
     BannerDoc,
     MainCardDoc,
